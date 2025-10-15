@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    font-family: 'Poppins';
+
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 30px 0;
+            color: #3e8de2d7;
+            font-family:'Poppins';
+        }
+
+        .container {
+            position: relative;
+            background: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s;
+        }
+
+        .sign-in-container {
+            left: 0;
+            width: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .sign-up-container {
+            left: 50%;
+            width: 50%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0 0 20px;
+        }
+
+        input {
+            background-color: #f6f5f7;
+            border: none;
+            padding: 15px 20px;
+            margin: 8px 0;
+            width: 100%;
+        }
+
+        button {
+            background-color: #3a7bd5;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 15px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3354b5;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3a7bd5;
+            margin: 15px 0;
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.6s;
+            transform: translateX(-50%);
+        }
+
+        .overlay {
+            background: #3a7bd5;
+            background: -webkit-linear-gradient(to right, #3a7bd5, #35d6e3);
+            background: linear-gradient(to right, #3a7bd5, #35d6e3);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            transform: translateX(0);
+            transition: transform 0.6s;
+        }
+
+        .overlay-panel {
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 40px;
+            height: 100%;
+            width: 50%;
+            text-align: center;
+            transform: translateX(0);
+            transition: transform 0.6s;
+        }
+
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .ghost {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+
+        .slide-down {
+            animation: slideDown 0.6s ease forwards;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body background="C:\Users\teja1\Pictures\wnLNcaE.jpg">
+    <div class="header">Task Management System</div>
+    <div class="container">
+        <div class="form-container sign-up-container">
+            <form action="html.html"> <!-- Link to your Sign Up page -->
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container slide-down">
+            <form action="html.html"> <!-- Link to your Sign In page -->
+                <h1>Sign In</h1>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript for handling the switching between Sign Up and Sign In forms
+        const signUpButton = document.getElementById("signUp");
+        const signInButton = document.getElementById("signIn");
+        const container = document.querySelector(".container");
+
+        signUpButton.addEventListener("click", () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener("click", () => {
+            container.classList.remove("right-panel-active");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Task Management</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Created based on https://dribbble.com/shots/15851306-Storage-Dashboard-Exploration -->
+<!--<a href="https://www.freepik.com/photos/music">Music photo created by drobotdean - www.freepik.com</a>-->
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+<section class="container">
+  <nav id="nav">
+    <div>
+      <i class="las la-folder-open"></i>
+    </div>
+    <div>
+      <i class="las la-bookmark"></i>
+    </div>
+    <div>
+      <i class="las la-folder-open"></i>
+    </div>
+    <div>
+      <i class="las la-chart-bar"></i>
+    </div>
+    <div>
+      <i class="las la-comment-alt"></i>
+    </div>
+    <div>
+      <i class="las la-cog"></i>
+    </div>
+    <div>
+      <i class="las la-sign-out-alt"></i>
+    </div>
+  </nav>
+  <main>
+    <header>
+      <a>Task Management</a>
+      <div>
+        <i class="las la-search"></i>
+        <input type="text" placeholder="Search something..."></input>
+        <button>
+          <i class="las la-sliders-h"></i>
+        </button>
+      </div>
+    </header>
+    <section class="main-container">
+      <div class="more-memory">
+        <img src="https://drive.google.com/uc?id=1w9g2YfmhOJ5sntZroDP7dZhVmDHBHykH"/>
+        <h3>Create your Task's</h3>
+        <p> you have the power to create dynamic tasks,<br> prioritize them based on their importance, and efficiently organize your workflow for maximum productivity."</p>
+        <button id="createNowBtn">Create Now</button>
+        <script src="https://kit.fontawesome.com/c6a29aa531.js" crossorigin="anonymous"></script>
+    <script>
+        const taskList = document.getElementById("task-list");
+        const createNowBtn = document.getElementById("createNowBtn");
+
+        // Function to add a new task
+        function addTask(taskName) {
+            const taskItem = document.createElement("li");
+            taskItem.innerHTML = `
+                <div class="task-container">
+                    <div class="task-details">
+                        <h4>${taskName}</h4>
+                    </div>
+                    <div class="task-actions">
+                        <button class="edit-task"><i class="las la-pen"></i></button>
+                        <button class="delete-task"><i class="las la-trash-alt"></i></button>
+                    </div>
+                </div>
+            `;
+
+            taskList.appendChild(taskItem);
+        }
+
+        // Add a click event to the "Create Now" button
+        createNowBtn.addEventListener("click", () => {
+            window.location.href = "create.html"; // Replace with the target URL
+        });
+    </script>
+    
+      </div>
+      <div class="clouds">
+        <section id="my-cloud">
+          <header>
+
+            <div>
+              <i class="fas fa-cloud"></i>
+              
+            </div>
+            <i class="las la-ellipsis-v"></i>
+          </header>
+          <h4>Task 1</h4>
+          <footer>
+            <div class="stat">
+             
+            </div>
+            <div class="chart">
+              <div></div>
+              <div></div>
+            </div>
+          </footer>
+        </section>
+        <section id="dropbox">
+          <header>
+            <div>
+              <i class="fab fa-dropbox"></i>
+            </div>
+            <i class="las la-ellipsis-v"></i>
+          </header>
+          <h4>Task 2</h4>
+          <footer>
+            <div class="stat">
+              
+            </div>
+            <div class="chart">
+              <div></div>
+              <div></div>
+            </div>
+          </footer>
+        </section>
+        <section id="google-drive">
+          <header>
+            <div>
+              <i class="fab fa-google-drive"></i>
+            </div>
+            <i class="las la-ellipsis-v"></i>
+          </header>
+          <h4>Task 3</h4>
+          <footer>
+          
+            <div class="chart">
+              <div></div>
+              <div></div>
+            </div>
+          </footer>
+        </section>
+      </div>
+      <div class="storage">
+        <section class="details">
+          <header>
+            <h4>Storage details</h4>
+            <button>See More</button>
+          </header>
+          <footer>
+            <div class="chart">
+              <canvas id="chart" width="180" height="180"></canvas>
+            </div>
+            <div class="text">
+              <div id="media">
+                <h6><span></span>Media</h6>
+                <p>16.812 files</p>
+              </div>
+              <div id="document">
+                <h6><span></span>Document</h6>
+                <p>25.153 files</p>
+              </div>
+              <div id="apps">
+                <h6><span></span>Apps</h6>
+                <p>800 files</p>
+              </div>
+            </div>
+          </footer>
+        </section>
+        <section class="history">
+          <header>
+            <h4>Recent history</h4>
+            <button>See More</button>
+          </header>
+          <footer>
+            <table>
+              <thead>
+                <tr>
+                  <th>File name</th>
+                  <th>Date</th>
+                  <th>Files</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <i class="fas fa-file-word"></i>
+                    </div>
+                    <span>Project bref.docx</span>
+                  </td>
+                  <td>06-02-2021</td>
+                  <td>1,5MB</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <span>Style guide.pptx</span>
+                  </td>
+                  <td>14-02-2021</td>
+                  <td>8,4MB</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <i class="fas fa-music"></i>
+                    </div>
+                    <span>Record 119.mp3</span>
+                  </td>
+                  <td>18-02-2021</td>
+                  <td>4,6MB</td>
+                </tr>
+              </tbody>
+            </table>
+          </footer>
+      </div>
+    </section>
+  </main>
+  <nav id="sidebar">
+    <header>
+         <a class="user-status-button" href="mari.html">Login/Register</a>
+        
+         <a href="noti.html">
+            <button>
+              <i class="las la-bell"></i>
+              <span>5</span>
+            </button>
+          </a>
+          
+      <div class="user-logo">
+        <a>TEJA PRIYAN</a>
+        <img src="https://drive.google.com/uc?id=15YGAdERrRurbv37FUNK26R45wGwIocG2">
+      </div>
+    </header>
+    <section class="folders">
+      <header>
+        <h3>Folders</h3>
+        <a></a>
+      </header>
+      <div class="folder">
+        <header>
+          <i class="fas fa-folder"></i>
+          <h5>Moodboard</h5>
+          <p>11h</p>
+        </header>
+        <footer>
+          <p>135 files</p>
+          <div>
+            <span>
+              <img src="https://drive.google.com/uc?id=1wDYCwdiO-Fps4z4lFgN16FZKf4-xQTwQ">
+            </span>
+            <span>
+              <img src="https://drive.google.com/uc?id=1PZlrxmw85om8x4GcWFvyxlKclhXXPuod">
+            </span>
+            <span>
+              <img src="https://drive.google.com/uc?id=15s2qi4Mz-Z3uRlWKCKYTTdj6AayMKfc7">
+            </span>
+            <span>3</span>
+          </div>
+        </footer>
+      </div>
+      <div class="folder">
+        <header>
+          <i class="fas fa-folder"></i>
+          <h5>Weekly report</h5>
+          <p>17h</p>
+        </header>
+        <footer>
+          <p>271 files</p>
+          <div>
+            <span>
+              <img src="https://drive.google.com/uc?id=1wDYCwdiO-Fps4z4lFgN16FZKf4-xQTwQ">
+            </span>
+            <span>
+              <img src="https://drive.google.com/uc?id=1PZlrxmw85om8x4GcWFvyxlKclhXXPuod">
+            </span>
+            <span>
+              <img src="https://drive.google.com/uc?id=15s2qi4Mz-Z3uRlWKCKYTTdj6AayMKfc7">
+            </span>
+            <span>9</span>
+          </div>
+        </footer>
+      </div>
+      <div class="folder">
+        <header>
+          <i class="fas fa-folder"></i>
+          <h5>Images</h5>
+          <p>17/2/2021</p>
+        </header>
+        <footer>
+          <p>45 files</p>
+          <div>
+            <span>
+              <img src="https://drive.google.com/uc?id=1wDYCwdiO-Fps4z4lFgN16FZKf4-xQTwQ">
+            </span>
+            <span>
+              <img src="https://drive.google.com/uc?id=1PZlrxmw85om8x4GcWFvyxlKclhXXPuod">
+            </span>
+            <span>
+              <img src="https://drive.google.com/uc?id=15s2qi4Mz-Z3uRlWKCKYTTdj6AayMKfc7">
+            </span>
+            <span>4</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+    <section id="smart-view">
+      <img src="https://drive.google.com/uc?id=1ykdqMGfCNn0T0vrBo3_-TWkUiLXDXw0J">
+      <h2>Try Smart Backup Now !</h2>
+      <p>No more worrying about losing files</p>
+      <button>Get Started</button>
+    </section>
+  </nav>
+</section>
+
+
+<script src="https://kit.fontawesome.com/c6a29aa531.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- partial -->
+  <script  src="hmoe.js"></script>
+
+</body>
+</html>
