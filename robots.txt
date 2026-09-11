@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tejapriyan.github.io/Task-Management-Website/sitemap.xml
