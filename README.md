@@ -1,5 +1,5 @@
-# 📋 TaskY — Modern Task Management & Productivity System
-> *"Built during a hackathon to bring calm, clarity, and speed to daily developer workflows."*  
+﻿# 📋 TaskY — Modern Task Management & Productivity System
+> *Built during a hackathon to bring calm, clarity, and speed to daily developer workflows.*  
 > **Developed by [Teja Priyan](https://github.com/TejaPriyan)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -18,10 +18,10 @@ I built **TaskY** during a hackathon to solve this exact problem. My goal was si
 
 ---
 
-## ✨ What You Can Do with TaskY
+## 🚀 What You Can Do with TaskY
 
-- 📝 **Fast Task Creation**: Add tasks with priority levels, deadlines, and descriptions in seconds.
-- 🎯 **Visual Status Tracking**: Group tasks into intuitive categories (To-Do, In Progress, Done) with quick state transitions.
+- ⚡ **Fast Task Creation**: Add tasks with priority levels, deadlines, and descriptions in seconds.
+- 📊 **Visual Status Tracking**: Group tasks into intuitive categories (To-Do, In Progress, Done) with quick state transitions.
 - 🔔 **Activity & Notifications**: Keep track of pending deadlines and recent task actions.
 - 🎨 **Minimalist & Clean UI**: Distraction-free design with smooth transitions and modern aesthetics.
 - 📱 **Fully Responsive**: Optimized for desktop monitors, tablets, and mobile screens.
@@ -32,17 +32,17 @@ I built **TaskY** during a hackathon to solve this exact problem. My goal was si
 ## 🛠️ Tech Stack & Architecture
 
 - **Frontend**: Semantic HTML5 & Modern Vanilla CSS3
-- **Logic & State**: JavaScript (ES6+) DOM manipulation and event handlers
-- **Icons & Assets**: Custom TP Favicon Branding & SVG graphics
+- **Logic & State**: JavaScript (ES6+) DOM manipulation and Chart.js analytics
+- **Icons & Assets**: Custom TP Favicon Branding & FontAwesome graphics
 - **Hosting**: GitHub Pages
 
 ---
 
-## 🚀 Quick Start & Local Setup
+## 📦 Quick Start & Local Setup
 
 Because TaskY has no heavy node modules or build steps, running it locally takes 5 seconds:
 
-```bash
+`ash
 # Clone the repository
 git clone https://github.com/TejaPriyan/Task-Management-Website.git
 
@@ -55,9 +55,9 @@ start index.html
 
 # On Mac:
 open index.html
-```
+`
 
-Or visit the **[Live Demo on GitHub Pages ↗](https://tejapriyan.github.io/Task-Management-Website/)**.
+Or visit the **[Live Demo on GitHub Pages 🌐](https://tejapriyan.github.io/Task-Management-Website/)**.
 
 ---
 

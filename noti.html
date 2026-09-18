@@ -1,3 +1,70 @@
-<!DOCTYPE html>
-<head>you dont have any notification here></head>
-<body></body>
+﻿<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content=width=device-width, initial-scale=1.0>
+  <title>Notifications - Task Management System</title>
+  <link rel=icon type=image/svg+xml href=favicon.svg>
+  <link rel=stylesheet href=style.css>
+  <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    .noti-card {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      max-width: 420px;
+      width: 90%;
+    }
+    .noti-icon {
+      font-size: 3rem;
+      color: #6366f1;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: #64748b;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #6366f1;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+    .back-btn:hover {
+      background: #4f46e5;
+    }
+  </style>
+</head>
+<body>
+  <div class=noti-card>
+    <div class=noti-icon><i class=fa-solid fa-bell-slash></i></div>
+    <h1>All Caught Up!</h1>
+    <p>You have no unread notifications right now. Keep up the great productivity streak!</p>
+    <a href=index.html class=back-btn><i class=fa-solid fa-arrow-left></i> Back to Dashboard</a>
+  </div>
+</body>
+</html>

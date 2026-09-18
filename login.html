@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    font-family: 'Poppins';
+
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 30px 0;
+            color: #3e8de2d7;
+            font-family:'Poppins';
+        }
+
+        .container {
+            position: relative;
+            background: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s;
+        }
+
+        .sign-in-container {
+            left: 0;
+            width: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .sign-up-container {
+            left: 50%;
+            width: 50%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0 0 20px;
+        }
+
+        input {
+            background-color: #f6f5f7;
+            border: none;
+            padding: 15px 20px;
+            margin: 8px 0;
+            width: 100%;
+        }
+
+        button {
+            background-color: #3a7bd5;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 15px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3354b5;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3a7bd5;
+            margin: 15px 0;
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.6s;
+            transform: translateX(-50%);
+        }
+
+        .overlay {
+            background: #3a7bd5;
+            background: -webkit-linear-gradient(to right, #3a7bd5, #35d6e3);
+            background: linear-gradient(to right, #3a7bd5, #35d6e3);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            transform: translateX(0);
+            transition: transform 0.6s;
+        }
+
+        .overlay-panel {
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 40px;
+            height: 100%;
+            width: 50%;
+            text-align: center;
+            transform: translateX(0);
+            transition: transform 0.6s;
+        }
+
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .ghost {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+
+        .slide-down {
+            animation: slideDown 0.6s ease forwards;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <!-- TP Brand Favicons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content="Modern Task Management System and productivity dashboard by Teja Priyan (Tejapriyan). Streamline daily workflows, organize tasks, and track projects.">
+    <meta name="keywords" content="Task Management, Task Management System, productivity dashboard, task tracker, Teja Priyan, Tejapriyan, workflow organizer, project management, web app">
+    <meta name="author" content="Teja Priyan (Teja Priyan Sivaraj)">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://tejapriyan.github.io/Task-Management-Website/">
+
+    <!-- Google & Search Engine Verification -->
+    <meta name="google-site-verification" content="google87bb3bc53ec346d2.html">
+    <meta name="google-site-verification" content="87bb3bc53ec346d2">
+    <meta name="msvalidate.01" content="55A817D313620EDBE729ED7B7D416DA7">
+
+    <!-- Geographic & Local SEO (GEO) -->
+    <meta name="geo.region" content="IN-TN">
+    <meta name="geo.placename" content="Chennai, Tamil Nadu, India">
+    <meta name="geo.position" content="13.0827;80.2707">
+    <meta name="ICBM" content="13.0827, 80.2707">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tejapriyan.github.io/Task-Management-Website/">
+    <meta property="og:title" content="Task Management System by Teja Priyan">
+    <meta property="og:description" content="Modern Task Management System and productivity dashboard by Teja Priyan (Tejapriyan).">
+    <meta property="og:image" content="https://tejapriyan.github.io/Task-Management-Website/icon-192.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://tejapriyan.github.io/Task-Management-Website/">
+    <meta name="twitter:title" content="Task Management System by Teja Priyan">
+    <meta name="twitter:description" content="Modern Task Management System and productivity dashboard by Teja Priyan (Tejapriyan).">
+    <meta name="twitter:image" content="https://tejapriyan.github.io/Task-Management-Website/icon-192.png">
+
+    <!-- Semantic JSON-LD (AEO - Answer Engine Optimization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://tejapriyan.github.io/Task-Management-Website/#website",
+          "url": "https://tejapriyan.github.io/Task-Management-Website/",
+          "name": "Task Management System",
+          "description": "Task Management System by Teja Priyan (Tejapriyan).",
+          "publisher": { "@id": "https://portfoliotejapriyan.vercel.app/#person" },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://portfoliotejapriyan.vercel.app/#person",
+          "name": "Teja Priyan",
+          "alternateName": ["Myself Teja Priyan", "Tejapriyan", "Teja Priyan Sivaraj"],
+          "url": "https://portfoliotejapriyan.vercel.app/",
+          "jobTitle": "AI Engineer & Full Stack Developer",
+          "sameAs": [
+            "https://github.com/TejaPriyan",
+            "https://huggingface.co/teja161615",
+            "https://portfoliotejapriyan.vercel.app/"
+          ]
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Task Management System",
+          "url": "https://tejapriyan.github.io/Task-Management-Website/",
+          "applicationCategory": "BusinessApplication, ProductivityApplication",
+          "operatingSystem": "All modern web browsers",
+          "author": { "@id": "https://portfoliotejapriyan.vercel.app/#person" },
+          "description": "Streamline daily workflows, manage tasks, prioritize goals, and monitor progress."
+        }
+      ]
+    }
+    </script>
+</head>
+<body background="C:\Users\teja1\Pictures\wnLNcaE.jpg">
+    <div class="header">Task Management System</div>
+    <div class="container">
+        <div class="form-container sign-up-container">
+            <form action="html.html"> <!-- Link to your Sign Up page -->
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container slide-down">
+            <form action="html.html"> <!-- Link to your Sign In page -->
+                <h1>Sign In</h1>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript for handling the switching between Sign Up and Sign In forms
+        const signUpButton = document.getElementById("signUp");
+        const signInButton = document.getElementById("signIn");
+        const container = document.querySelector(".container");
+
+        signUpButton.addEventListener("click", () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener("click", () => {
+            container.classList.remove("right-panel-active");
+        });
+    </script>
+</body>
+</html>
+
